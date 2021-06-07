@@ -9,9 +9,17 @@
         Background="{DynamicResource MaterialDesignPaper}"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
         FontFamily="pack://application:,,,/MaterialDesignThemes.Wpf;component/Resources/Roboto/#Roboto"
-        Title="Tour" Height="188" Width="248" ResizeMode="CanResize" WindowState="Normal" >
+        Title="Tour" Height="203" Width="265" ResizeMode="CanResize" WindowState="Normal" >
 
-    <Grid>
+    <Grid RenderTransformOrigin="0.5,0.5">
+        <Grid.RenderTransform>
+            <TransformGroup>
+                <ScaleTransform/>
+                <SkewTransform/>
+                <RotateTransform Angle="0.065"/>
+                <TranslateTransform/>
+            </TransformGroup>
+        </Grid.RenderTransform>
         <Button Content="Create Tour" HorizontalAlignment="Left" Margin="48,138,0,0" VerticalAlignment="Top" Height="30" Width="110" Command="{Binding AddTour}"/>
         <Button Content="Cancel" HorizontalAlignment="Left" Margin="163,138,0,0" VerticalAlignment="Top" Height="30" Width="85" Command="{Binding Close}"/>
         <Label Content="Price" HorizontalAlignment="Left" Margin="10,59,0,0" VerticalAlignment="Top" Height="33" Width="45"/>

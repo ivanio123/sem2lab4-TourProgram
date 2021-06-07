@@ -188,6 +188,7 @@ namespace TourProgram.ViewModels
                                 vm.Excursions.Add(excursion);
                                 Refresh();
                                 Calculate();
+                                Refresh();
                             }
                             else
                             {
@@ -211,6 +212,8 @@ namespace TourProgram.ViewModels
                                 vm.Excursions[this.Excursions.SelectedIndex] = excursion;
                                 Refresh();
                                 Calculate();
+                                Refresh();
+
                                 Window.Close();
                             }
                             else
@@ -232,6 +235,7 @@ namespace TourProgram.ViewModels
                     (close = new RelayCommand(obj =>
                     {
                         Calculate();
+                        Refresh();
                         Window.Close();
 
                     }));
@@ -241,6 +245,21 @@ namespace TourProgram.ViewModels
         public void Refresh()
         {
             Excursions.Items.Refresh();
+            ListBox TourList = (ListBox)Application.Current.Windows[0].FindName("TourList");
+            TourList.Items.Refresh();
+            CheckFullInfo();
+        }
+        public void CheckFullInfo()
+        {
+            TextBlock Block = (TextBlock)Application.Current.Windows[0].FindName("Info");
+            if (Tour != null)
+            {
+                Block.Text = Tour.GenerateFullInformation();
+            }
+            else
+            {
+                Block.Text = "";
+            }
         }
         public void Calculate()
         {

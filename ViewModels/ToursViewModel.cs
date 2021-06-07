@@ -62,6 +62,7 @@ namespace TourProgram.ViewModels
                         tourWindow.DataContext = new TourViewModel(SelectedTour, tourWindow);
                         tourWindow.Show();
                         Calculate();
+                        Refresh();
                     }));
             }
         }
@@ -82,6 +83,7 @@ namespace TourProgram.ViewModels
                             vm.Window = tourWindow;
                             tourWindow.Show();
                             Calculate();
+                            Refresh();
                         }
                     }));
             }
@@ -99,8 +101,9 @@ namespace TourProgram.ViewModels
                         if (SelectedTour != null)
                         {
                             Tours.Remove(SelectedTour);
-                            Refresh();
+                            //Refresh();
                             Calculate();
+                            Refresh();
                         }
                     }));
             }
@@ -120,6 +123,7 @@ namespace TourProgram.ViewModels
                             excursionsWindow.ExcursionList.Items.Refresh();
                             excursionsWindow.Show();
                             Calculate();
+                            Refresh();
                         }
                     }));
             }
