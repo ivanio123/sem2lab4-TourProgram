@@ -1,0 +1,21 @@
+﻿<Window x:Class="TourProgram.Views.ExcursionsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="pack://application:,,,/MaterialDesignThemes.Wpf;component/Resources/Roboto/#Roboto"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        xmlns:viewmodels="clr-namespace:TourProgram.ViewModels"
+        mc:Ignorable="d"
+        Title="ExcursionsWindow" Height="450" Width="800" ResizeMode="NoResize">
+    
+    <Grid>
+        <ListBox Background="#2196f3" Name="ExcursionList" ItemsSource="{Binding Excursions}" SelectedItem="{Binding SelectedExcursion}" Margin="120,13,75,110"/>
+        <Button Content="Add" HorizontalAlignment="Left" Height="35" Margin="25,13,0,0" VerticalAlignment="Top" Width="90" Command="{Binding AddExcursionCommand}"/>
+        <Button Content="Edit" HorizontalAlignment="Left" Height="35" Margin="25,53,0,0" VerticalAlignment="Top" Width="90" Command="{Binding EditExcursionCommand}"/>
+        <Button Content="Delete" HorizontalAlignment="Left" Height="35" Margin="25,93,0,0" VerticalAlignment="Top" Width="90" Command="{Binding DeleteExcursionCommand}"/>
+
+    </Grid>
+</Window>
